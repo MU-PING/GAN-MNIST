@@ -1,9 +1,7 @@
-
 import numpy as np
-import tensorflow as tf
 import tkinter as tk
 import matplotlib.pyplot as plt
-from time import sleep
+
 from tkinter import ttk 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tensorflow.keras.datasets import mnist
@@ -119,8 +117,7 @@ class GAN():
                 self.sample_images(epoch)
                 
             window.update()
-
-            
+        
     def sample_images(self, epoch):
         
         row, col = 3, 3
