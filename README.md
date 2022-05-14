@@ -1,3 +1,3 @@
 # GAN
 
-![20220512_031440_1_](https://user-images.githubusercontent.com/93152909/168250170-4a885b66-0cd2-41d8-8d73-41334bf58a3f.gif)
+![20220515_041125_ (1)](https://user-images.githubusercontent.com/93152909/168448775-2f904bd0-fb9b-47fc-992f-41fa8e350d16.gif)
