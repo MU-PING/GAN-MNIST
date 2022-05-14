@@ -155,7 +155,7 @@ def disable(component):
 window = tk.Tk()
 window.geometry("750x750")
 window.resizable(False, False)
-window.title("GAN-MNIST Algorithm ")
+window.title("GAN Algorithm ")
 window.configure(bg='#E6E6FA')
 
 # Global var
