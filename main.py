@@ -5,9 +5,12 @@ import matplotlib.pyplot as plt
 from tkinter import ttk 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tensorflow.keras.datasets import mnist
-from tensorflow.keras.layers import Dense, BatchNormalization, Reshape, Flatten, LeakyReLU, Input
+from tensorflow.keras.layers import Dense, Reshape, Flatten, LeakyReLU, Input
 from tensorflow.keras import Sequential, Model
 from tensorflow.keras.optimizers import Adam
+
+# https://blog.csdn.net/Strive_For_Future/article/details/115243512
+from tensorflow.compat.v1.keras.layers import BatchNormalization
 
 class GAN():
     def __init__(self):
