@@ -7,7 +7,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.layers import Dense, Reshape, Flatten, LeakyReLU, Input
 from tensorflow.keras import Sequential, Model
-from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers.legacy import Adam
 
 # https://blog.csdn.net/Strive_For_Future/article/details/115243512
 from tensorflow.compat.v1.keras.layers import BatchNormalization
@@ -68,7 +68,7 @@ class GAN():
 
     def combined(self, generator, discriminator):
 
-        # generator takes noise as input and generates imgs
+        # generator takes noise as input and generates imgs:https://blog.csdn.net/qq_38669138/article/details/109029782
         discriminator.trainable = False
 
         noise = Input(shape=(self.noise_dim,))
@@ -100,7 +100,7 @@ class GAN():
             
             # generator generate fake img
             noise = np.random.normal(0, 1, (batch_size, self.noise_dim))
-            fakeImage = self.generator.predict(noise)
+            fakeImage = self.generator(noise)
 
             # train discriminator --------GAN tip:"How to Train a GAN?" at NIPS2016
             d_loss_real = self.discriminator.train_on_batch(realImage, real)
@@ -131,7 +131,7 @@ class GAN():
         
         # generator generate fake img 
         noise = np.random.normal(0, 1, (row * col, self.noise_dim))
-        fakeImage = self.generator.predict(noise)
+        fakeImage = self.generator(noise)
         
         # rescale images
         fakeImage = 127.5 * (fakeImage + 1)
@@ -178,7 +178,7 @@ frame3 = tk.Frame(window)
 frame3.pack(side='top', pady=10)
 
 # Plot
-fig, ax = plt.subplots(3, 3, figsize = (9, 8))
+fig, ax = plt.subplots(3, 3, figsize = (9, 8), dpi=72)
 canvas = FigureCanvasTkAgg(fig, frame3)  # A tk.DrawingArea.
 canvas.get_tk_widget().grid()
 
